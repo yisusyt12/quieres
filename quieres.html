@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pregunta de noviazgo</title>
+    <style>
+        body {
+            background-color: #f6e7f7;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #noButton {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            position: relative;
+        }
+        
+        #yesButton {
+            background-color: #4dff4d;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> ¿Quieres ser mi novia mona? jijiji</h1>
+        <button id="noButton" onclick="moveButton()">No</button>
+        <button id="yesButton" onclick="acceptProposal()">Sí</button>
+    </div>
+    
+    <script>
+        function moveButton() {
+            var button = document.getElementById("noButton");
+            var buttonWidth = button.offsetWidth;
+            var buttonHeight = button.offsetHeight;
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+            var maxLeft = windowWidth - buttonWidth;
+            var maxTop = windowHeight - buttonHeight;
+            var newLeft = Math.floor(Math.random() * (maxLeft - 5)); // Reducir el desplazamiento máximo
+            var newTop = Math.floor(Math.random() * (maxTop - 5)); // Reducir el desplazamiento máximo
+            
+            button.style.left = newLeft + "px";
+            button.style.top = newTop + "px";
+        }
+        
+        function acceptProposal() {
+            alert(" ¡Sí, ves que sí querías ser mi novia mona linda! :)");
+        }
+    </script>
+</body>
+</html>
